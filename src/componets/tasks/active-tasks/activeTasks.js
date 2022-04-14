@@ -1,22 +1,27 @@
 import { connect } from 'react-redux';
-import { activeTasksIdSelector } from '../../../redux/selectors';
+import { doneTask } from '../../../redux/actions';
+import { activeTasksListSelector } from '../../../redux/selectors';
 
-import Task from './task'
+import Task from '../task'
 
-function ActiveTasks({ tasks }) {
+function ActiveTasks({ tasks, onChange }) {
 
     return (
         <div>
-            {tasks.map((id) => (
-                <Task key={id} id={id}/> 
+            {tasks.map(task => (
+                <Task key={task.id} task={task} onChange={() => onChange(task)}/> 
             ))}
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    tasks: activeTasksIdSelector(state),
+    tasks: activeTasksListSelector(state),
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    onChange: (task) => dispatch(doneTask(task))
 })
 
 
-export default connect(mapStateToProps)(ActiveTasks);
+export default connect(mapStateToProps, mapDispatchToProps)(ActiveTasks);

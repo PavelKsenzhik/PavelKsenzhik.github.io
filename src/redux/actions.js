@@ -6,9 +6,9 @@ import {
 } from "./constants";
 
 
-export const addTask = ({ text }, taskId) => ({
+export const addTask = ({ id, text }, taskId) => ({
     type: ADD + TASK,
-    taskId,
+    taskId: id || taskId,
     text,
     checked: false,
 })

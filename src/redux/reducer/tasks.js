@@ -26,7 +26,7 @@ export default produce((draft = initialState, action) => {
             delete draft.done[taskId] 
             break;
         }
-        case DONE + TASK: {          
+        case DONE + TASK: {        
             draft.done[taskId] = {
                 id: taskId,
                 text,

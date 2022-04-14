@@ -1,7 +1,20 @@
 import { createSelector } from "reselect";
 
-const activeTasksSelector = (state) => state.tasks.active;
-const doneTasksSelector = (state) => state.tasks.done;
+export const activeTasksSelector = (state) => state.tasks.active;
+export const doneTasksSelector = (state) => state.tasks.done;
+
+export const activeTasksListSelector = createSelector(
+    activeTasksSelector,
+    (tasks) => {
+        return Object.values(tasks)
+    }
+)
+export const doneTasksListSelector = createSelector(
+    doneTasksSelector,
+    (tasks) => {
+        return Object.values(tasks)
+    }
+)
 
 export const activeTasksIdSelector = createSelector(
     activeTasksSelector,

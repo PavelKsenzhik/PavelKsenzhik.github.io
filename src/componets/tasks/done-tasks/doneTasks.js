@@ -1,19 +1,27 @@
+import { useMemo } from 'react';
 import { connect } from 'react-redux';
-import { doneTasksIdSelector } from '../../../redux/selectors';
+import { addTask } from '../../../redux/actions';
+import { doneTasksIdSelector, doneTasksListSelector } from '../../../redux/selectors';
 
-import Task from './task'
+import Task from '../task'
 
-function DoneTasks({ doneTasks  }) {
+function DoneTasks({ tasks, onChange }) {
     return (
         <div>
             <p>Done Tasks</p>
-            {doneTasks.map(id => <Task key={id} id={id}/>)}
+            {tasks.map(task => 
+            <Task key={task.id} task={task} onChange={() => onChange(task)}/>  
+            )}
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    doneTasks: doneTasksIdSelector(state)
+    tasks:  doneTasksListSelector(state),
 })
 
-export default connect(mapStateToProps)(DoneTasks);
+const mapDispatchToProps = (dispatch) => ({
+    onChange: (task) => dispatch(addTask(task)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(DoneTasks);
