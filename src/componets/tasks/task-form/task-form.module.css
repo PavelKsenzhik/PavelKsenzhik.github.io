@@ -1,5 +1,5 @@
 ._wrapper{
-    background-color: rgba(255, 187, 163, 0.639);
+    background-color: rgba(252, 204, 186, 0.183);
     padding: 16px;
 }
 
@@ -11,8 +11,6 @@
 }
 
 ._input{
-    background-color: rgb(255, 187, 163);
-    border-radius: 8px;
     margin: 16px 0px;
     min-height: 48px;
     width: 100%;
@@ -23,9 +21,16 @@
     transition-duration: 0.2s;
 }
 
+._input::placeholder{
+    color: coral;
+}
+
 ._input:focus{
     background-color: #fff;
     border-bottom: 3px solid coral;
+}
+._input:focus::placeholder{
+    color: rgb(0, 0, 0);
 }
 
 ._btn{

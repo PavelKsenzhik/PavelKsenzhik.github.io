@@ -17,8 +17,8 @@ function Task({ task, onChange }) {
                 checked={checked}
                 onChange={() => onChange(task)}
                 />   
-                <span className={styles._text}>{text}</span>
                 </label>
+                <span className={styles._text}>{text}</span>
             </div>
             <div className={styles._pannel}>
                 <button className={styles._btn}>Delete</button>
