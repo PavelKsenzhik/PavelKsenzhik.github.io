@@ -1,0 +1,41 @@
+._wrapper{
+    background-color: rgba(255, 187, 163, 0.639);
+    padding: 16px;
+}
+
+._form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+._input{
+    background-color: rgb(255, 187, 163);
+    border-radius: 8px;
+    margin: 16px 0px;
+    min-height: 48px;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    transition-duration: 0.2s;
+}
+
+._input:focus{
+    background-color: #fff;
+    border-bottom: 3px solid coral;
+}
+
+._btn{
+
+    font-size: 16px;
+    color: #fff;
+    transition-duration: 0.2s;
+}
+
+._btn:active{
+    background-color: #fff;
+    color: coral;
+}
