@@ -17,7 +17,7 @@ const TaskForm = ({ onSubmit }) => {
             alert('Write something')
             return
         }
-        onSubmit(values, Math.random());
+        onSubmit(values, Math.random(), Date.parse(new Date()));
         reset();
     }
 
@@ -36,8 +36,8 @@ const TaskForm = ({ onSubmit }) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    onSubmit: (values, taskId) => {
-        dispatch(addTask(values, taskId))
+    onSubmit: (values, taskId, date) => {
+        dispatch(addTask(values, taskId, date))
     },
 });
 

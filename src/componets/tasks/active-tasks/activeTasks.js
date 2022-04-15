@@ -1,26 +1,32 @@
 import { connect } from 'react-redux';
-import { doneTask } from '../../../redux/actions';
+import { delTask, doneTask } from '../../../redux/actions';
 import { activeTasksListSelector } from '../../../redux/selectors';
 
 import Task from '../task'
 
-function ActiveTasks({ tasks, onChange }) {
+function ActiveTasks({ tasks, onChange, del }) {
 
     return (
         <div>
             {tasks.map(task => (
-                <Task key={task.id} task={task} onChange={() => onChange(task)}/> 
+                <Task 
+                    key={task.id} 
+                    task={task} 
+                    onChange={() => onChange(task)}
+                    del={() => del(task.id)}
+                /> 
             ))}
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    tasks: activeTasksListSelector(state),
+    tasks: activeTasksListSelector(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    onChange: (task) => dispatch(doneTask(task))
+    onChange: (task) => dispatch(doneTask(task)),
+    del: (taskId) => dispatch(delTask(taskId)),
 })
 
 

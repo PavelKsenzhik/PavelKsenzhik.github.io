@@ -3,10 +3,9 @@ import produce from 'immer';
 import { 
     TASK,
     ADD, 
-    REMOVE, 
     DONE,
+    DEL,
 } from "../constants";
-import { arrToMap } from "../utils";
 
 const initialState = {
     active: {},
@@ -15,12 +14,13 @@ const initialState = {
 
 
 export default produce((draft = initialState, action) => {
-    const { type, taskId, checked, text } = action;
+    const { type, taskId, checked, text, date } = action;
     switch (type) {
         case ADD + TASK: {
             draft.active[taskId] = { 
                 id: taskId,
                 text,
+                date,
                 checked,
             }
             delete draft.done[taskId] 
@@ -30,12 +30,17 @@ export default produce((draft = initialState, action) => {
             draft.done[taskId] = {
                 id: taskId,
                 text,
+                date,
                 checked,
             }
             delete draft.active[taskId] 
             break; 
         }
-
+        case DEL + TASK: {
+            delete draft.active[taskId] 
+            delete draft.done[taskId]
+            break;
+        }
         default:
             return draft;
     }

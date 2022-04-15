@@ -11,13 +11,14 @@
     
 }
 
-._text_container{
+._info_container{
     display: flex;
 }
 
-._pannel{
-    
+._checkbox_container{
+    display: flex;
 }
+
 
 ._label{
     display: flex;
@@ -25,9 +26,22 @@
     justify-content: center;
 }
 
-._text {
-    font-size: 32px;
+._text_body{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-left: 16px;
+}
+
+._text {
+    font-size: 28px;
+}
+
+._date{
+    font-size: 14px;
+}
+
+._pannel{   
 }
 
 ._btn{
