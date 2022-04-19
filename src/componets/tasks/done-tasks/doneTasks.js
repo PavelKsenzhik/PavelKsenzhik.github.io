@@ -1,14 +1,20 @@
-import { useMemo } from 'react';
 import { connect } from 'react-redux';
 import { addTask, delTask } from '../../../redux/actions';
 import { doneTasksListSelector } from '../../../redux/selectors';
 
 import Task from '../task'
 
+import styles from './doneTasks.module.css'
+
 function DoneTasks({ tasks, onChange, del }) {
+
+    if(tasks.length === 0) return (
+        <div></div>
+    )
+
     return (
         <div>
-            <p>Done Tasks</p>
+            <p className={styles._title}>Done Tasks</p>
             {tasks.map(task => 
             <Task 
                 key={task.id} 

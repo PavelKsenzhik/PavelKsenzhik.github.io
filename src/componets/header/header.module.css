@@ -1,5 +1,5 @@
 ._wrapper {
-    padding: 16px 24px;
+    padding: 24px 32px;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -7,7 +7,7 @@
 }
 
 ._title{
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 700;
 }
 

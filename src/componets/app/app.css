@@ -8,3 +8,16 @@ body{
     font-family: 'Roboto', sans-serif;
 
 }
+
+.app{
+    display: flex;
+}
+
+.side-bar{
+    width: 20%;
+    position: relative;
+}
+
+.content{
+    width: 80%;
+}

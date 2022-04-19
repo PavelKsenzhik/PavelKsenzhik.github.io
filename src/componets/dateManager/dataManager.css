@@ -1,0 +1,51 @@
+.wrapper{
+    position: fixed;
+    padding: 24px 0px;
+    background: rgb(255, 127, 80);
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.list{
+    font-size: 32px;
+    opacity: 0;
+    position: relative;
+    top: 50px;
+    transition-duration: 0.5s;
+}
+
+.list._active{
+    top: 0px;
+    opacity: 1;
+    margin: 0px;
+}
+
+.item{
+    margin: 16px 0px;
+}
+
+.bin{
+    color: #fff;
+    display: flex;
+    align-items: center;
+
+}
+
+.bin__icon{
+    height: 32px;
+    width: 24px;
+    margin-right: 8px;
+}
+
+@media (max-width: 1000px) {
+    .list{
+        font-size: 24px;
+    }
+}
