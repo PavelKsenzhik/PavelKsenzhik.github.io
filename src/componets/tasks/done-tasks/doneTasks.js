@@ -20,7 +20,7 @@ function DoneTasks({ tasks, onChange, del }) {
                 key={task.id} 
                 task={task} 
                 onChange={() => onChange(task)}
-                del={() => del(task.id)}
+                del={() => del(task)}
             />  
             )}
         </div>
@@ -33,7 +33,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     onChange: (task) => dispatch(addTask(task)),
-    del: (taskId) => dispatch(delTask(taskId)),
+    del: (task) => dispatch(delTask(task)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DoneTasks);

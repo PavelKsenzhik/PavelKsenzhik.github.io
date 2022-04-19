@@ -21,7 +21,9 @@ export const doneTask = ({ id, text, checked }) => ({
     checked: !checked,
 })
 
-export const delTask = (taskId) => ({
+export const delTask = ({ id, text, checked }) => ({
     type: DEL + TASK,
-    taskId,
+    taskId: id,
+    text,
+    checked: !checked,
 })

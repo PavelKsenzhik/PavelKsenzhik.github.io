@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import connect from 'react-redux';
+import { connect } from 'react-redux';
 
 import { ReactComponent as BinIcon } from '../../icons/bin.svg';
 import { ReactComponent as TodayIcon } from '../../icons/today.svg';
@@ -77,4 +77,9 @@ function DateManager() {
     )
 }
 
-export default DateManager;
+const mapStateToProps = () => ({
+
+})
+
+
+export default connect(mapStateToProps)(DateManager);

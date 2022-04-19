@@ -10,6 +10,7 @@ import {
 const initialState = {
     active: {},
     done: {},
+    bin: {},
 }
 
 
@@ -37,8 +38,15 @@ export default produce((draft = initialState, action) => {
             break; 
         }
         case DEL + TASK: {
+            draft.bin[taskId] = {
+                id: taskId,
+                text,
+                date,
+                checked,
+            }
             delete draft.active[taskId] 
             delete draft.done[taskId]
+
             break;
         }
         default:
