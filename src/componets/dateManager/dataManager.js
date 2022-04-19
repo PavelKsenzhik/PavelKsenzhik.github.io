@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import connect from 'react-redux';
 
-import { ReactComponent as BinIcon } from '../../icons/bin.svg'
+import { ReactComponent as BinIcon } from '../../icons/bin.svg';
+import { ReactComponent as TodayIcon } from '../../icons/today.svg';
+import { ReactComponent as TomorrowIcon } from '../../icons/tomorrow.svg'
+import { ReactComponent as WeekIcon } from '../../icons/week.svg'
 
 import './dataManager.css'
 
@@ -52,10 +55,19 @@ function DateManager() {
 
     return (
         <div className='wrapper'>
-            <ul className='list _anim-items' >
-                <li className='item'>Today</li>
-                <li className='item'>Tomorrow</li>
-                <li className='item'>Next week</li>
+            <ul className='list' >
+                <li className='item _anim-items'>
+                    <TodayIcon className='item-icon'/>
+                    <p className='item-text'>Today</p>
+                </li>
+                <li className='item _anim-items'>
+                    <TomorrowIcon className='item-icon'/>
+                    <p className='item-text'>Tomorrow</p>
+                </li>
+                <li className='item _anim-items'>
+                    <WeekIcon className='item-icon'/>
+                    <p className='item-text'>Week</p>
+                </li>
             </ul>
             <div className='bin'>
                 <BinIcon className='bin__icon'/>
