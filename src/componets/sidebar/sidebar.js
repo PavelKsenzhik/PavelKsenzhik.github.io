@@ -8,14 +8,13 @@ import { ReactComponent as WeekIcon } from '../../icons/week.svg'
 
 import './dataManager.css'
 
-function DateManager() {
+function Sidebar() {
     
     
 
     useEffect(() => {
 
         const animItems = document.querySelectorAll('._anim-items');
-        console.log(animItems);
 
         if(animItems.length > 0){
             window.addEventListener('scroll', animOnScroll);
@@ -82,4 +81,4 @@ const mapStateToProps = () => ({
 })
 
 
-export default connect(mapStateToProps)(DateManager);
+export default connect(mapStateToProps)(Sidebar);

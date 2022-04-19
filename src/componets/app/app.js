@@ -3,13 +3,13 @@ import Tasks from '../tasks';
 
 import './min.css'
 import './app.css';
-import DateManager from '../dateManager';
+import Sidebar from '../sidebar';
 
 function App() {
   return (
     <div className="app">
       <div className='side-bar'>
-        <DateManager />
+        <Sidebar />
       </div>
       <div className='content'>
         <Header />
