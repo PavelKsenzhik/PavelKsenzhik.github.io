@@ -61,18 +61,6 @@
     margin-right: 8px;
 }
 
-.bin{
-    color: #fff;
-    display: flex;
-    align-items: center;
-
-}
-
-.bin__icon{
-    height: 32px;
-    width: 24px;
-    margin-right: 8px;
-}
 
 @media (max-width: 1000px) {
     .list{
