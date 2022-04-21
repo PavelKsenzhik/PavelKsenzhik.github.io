@@ -5,8 +5,27 @@
 
 }
 
+
+
 .bin__icon{
     height: 32px;
     width: 24px;
     margin-right: 8px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.bin:hover > .bin__icon{
+    height: 36px;
+    width: 28px;
+}
+
+.bin__text{
+    font-size: 16px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.bin:hover > .bin__text {
+    font-size: 18px;
 }

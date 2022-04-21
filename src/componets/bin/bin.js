@@ -9,7 +9,7 @@ function Bin() {
     return (
         <div className='bin'>
             <BinIcon className='bin__icon'/>
-            <p>Recicle Bin</p>
+            <p className='bin__text'>Recicle Bin</p>
         </div>
     )
 }
