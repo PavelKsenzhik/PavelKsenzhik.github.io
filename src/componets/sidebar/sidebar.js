@@ -4,29 +4,29 @@ import { connect } from 'react-redux';
 import { ReactComponent as TodayIcon } from '../../icons/today.svg';
 import { ReactComponent as TomorrowIcon } from '../../icons/tomorrow.svg'
 import { ReactComponent as WeekIcon } from '../../icons/week.svg'
-import Bin from '../bin';
+import BinPannel from '../bin-pannel';
 
-import './dataManager.css'
+import './sidebar.css'
 
 function Sidebar() {
 
     return (
-        <div className='wrapper'>
-            <ul className='list' >
-                <li className='item _anim-items'>
-                    <TodayIcon className='item-icon'/>
-                    <p className='item-text'>Today</p>
+        <div className='sidebar _anim-items'>
+            <ul className='sidebar__list' >
+                <li className='sidebar__item _anim-items'>
+                    <TodayIcon className='sidebar__item-icon'/>
+                    <p className='sidebar__item-text'>Today</p>
                 </li>
-                <li className='item _anim-items'>
-                    <TomorrowIcon className='item-icon'/>
-                    <p className='item-text'>Tomorrow</p>
+                <li className='sidebar__item _anim-items'>
+                    <TomorrowIcon className='sidebar__item-icon'/>
+                    <p className='sidebar__item-text'>Tomorrow</p>
                 </li>
-                <li className='item _anim-items'>
-                    <WeekIcon className='item-icon'/>
-                    <p className='item-text'>Week</p>
+                <li className='sidebar__item _anim-items'>
+                    <WeekIcon className='sidebar__item-icon'/>
+                    <p className='sidebar__item-text'>Week</p>
                 </li>
             </ul>
-            <Bin />
+            <BinPannel />
         </div>
     )
 }
