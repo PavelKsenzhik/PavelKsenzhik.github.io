@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { addTask, delTask } from '../../../redux/actions';
 import { doneTasksListSelector } from '../../../redux/selectors';
 
-import Task from '../task'
+import Task from '../../task'
 
 import styles from './doneTasks.module.css'
 

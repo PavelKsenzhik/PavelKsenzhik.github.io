@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { delTask, doneTask } from '../../../redux/actions';
 import { activeTasksListSelector } from '../../../redux/selectors';
 
-import Task from '../task'
+import Task from '../../task'
 
 function ActiveTasks({ tasks, onChange, del }) {
 

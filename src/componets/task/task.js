@@ -1,6 +1,6 @@
 import Moment from 'react-moment';
 
-import Checkbox from '../../checkbox';
+import Checkbox from '../checkbox';
 
 import styles from './task.module.css';
 

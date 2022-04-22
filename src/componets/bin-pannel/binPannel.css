@@ -1,4 +1,4 @@
-.bin{
+.bin-pannel{
     color: #fff;
     display: flex;
     align-items: center;
@@ -8,11 +8,11 @@
     transition-duration: 0.2s;
 }
 
-.bin._active{
+.bin-pannel._active{
     left: 0px;
 }
 
-.bin__icon{
+.bin-pannel__icon{
     height: 32px;
     width: 24px;
     margin-right: 8px;
@@ -20,17 +20,17 @@
     cursor: pointer;
 }
 
-.bin:hover > .bin__icon{
+.bin-pannel:hover > .bin-pannel__icon{
     height: 36px;
     width: 28px;
 }
 
-.bin__text{
+.bin-pannel__text{
     font-size: 20px;
     transition-duration: 0.2s;
     cursor: pointer;
 }
 
-.bin:hover > .bin__text {
+.bin-pannel:hover > .bin-pannel__text {
     font-size: 24px;
 }
