@@ -5,6 +5,7 @@ import {
     ADD, 
     DONE,
     DEL,
+    RESTORE,
 } from "../constants";
 
 const initialState = {
@@ -46,7 +47,26 @@ export default produce((draft = initialState, action) => {
             }
             delete draft.active[taskId] 
             delete draft.done[taskId]
+            break;
+        }
+        case RESTORE + TASK: {
+            if(checked) {
+                draft.done[taskId] = {
+                    id: taskId,
+                    text,
+                    date,
+                    checked,
+                }
+            } else {
+                draft.active[taskId] = {
+                    id: taskId,
+                    text,
+                    date,
+                    checked,
+                }
+            }
 
+            delete draft.bin[taskId]
             break;
         }
         default:

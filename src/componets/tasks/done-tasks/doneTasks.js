@@ -6,7 +6,7 @@ import Task from '../../task'
 
 import styles from './doneTasks.module.css'
 
-function DoneTasks({ tasks, onChange, del }) {
+function DoneTasks({ tasks, onCheckbox, onDel }) {
 
     if(tasks.length === 0) return (
         <div></div>
@@ -19,8 +19,8 @@ function DoneTasks({ tasks, onChange, del }) {
             <Task 
                 key={task.id} 
                 task={task} 
-                onChange={() => onChange(task)}
-                del={() => del(task)}
+                onCheckbox={() => onCheckbox(task)}
+                onDel={() => onDel(task)}
             />  
             )}
         </div>
@@ -32,8 +32,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    onChange: (task) => dispatch(addTask(task)),
-    del: (task) => dispatch(delTask(task)),
+    onCheckbox: (task) => dispatch(addTask(task)),
+    onDel: (task) => dispatch(delTask(task)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DoneTasks);

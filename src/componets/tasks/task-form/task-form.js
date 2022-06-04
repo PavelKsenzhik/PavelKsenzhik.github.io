@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
+import { addTask } from '../../../redux/actions';
 
 import useForm from '../../../hooks/use-form';
 
-import { addTask } from '../../../redux/actions';
+import Calendar from '../../calendar';
 
 import styles from './task-form.module.css'
 
@@ -29,6 +30,7 @@ const TaskForm = ({ onSubmit }) => {
                 type='text'
                 placeholder='Write your task here'
                 {...handlers.text}></input>
+                <Calendar />
                 <button className={styles._btn} type='submit'>Add task</button>
             </form>
         </div>

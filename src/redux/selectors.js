@@ -2,6 +2,7 @@ import { createSelector } from "reselect";
 
 export const activeTasksSelector = (state) => state.tasks.active;
 export const doneTasksSelector = (state) => state.tasks.done;
+export const binTasksSelector = (state) => state.tasks.bin;
 
 export const activeTasksListSelector = createSelector(
     activeTasksSelector,
@@ -16,14 +17,21 @@ export const doneTasksListSelector = createSelector(
     }
 )
 
-export const activeTasksIdSelector = createSelector(
-    activeTasksSelector,
-    Object.keys
-);
-export const doneTasksIdSelector = createSelector(
-    doneTasksSelector,
-    Object.keys
+export const binTasksListSelector = createSelector(
+    binTasksSelector,
+    (tasks) => {
+        return Object.values(tasks)
+    }
 )
+
+// export const activeTasksIdSelector = createSelector(
+//     activeTasksSelector,
+//     Object.keys
+// );
+// export const doneTasksIdSelector = createSelector(
+//     doneTasksSelector,
+//     Object.keys
+// )
 
 
  

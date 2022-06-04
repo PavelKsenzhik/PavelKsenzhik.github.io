@@ -4,8 +4,10 @@ import Checkbox from '../checkbox';
 
 import styles from './task.module.css';
 
-function Task({ task, onChange, del }) {
+function Task({ task, onCheckbox, onDel, bin }) {
     const { text, checked, date } = task;
+
+    const btnText = bin ? 'Restore' : 'Delete';
     return (
         <div className={styles._wrapper}>
             <div className={styles._info_container}>
@@ -13,7 +15,7 @@ function Task({ task, onChange, del }) {
                     <label className={styles._label}>
                     <Checkbox 
                     checked={checked}
-                    onChange={onChange}
+                    onChange={onCheckbox}
                     />   
                     </label>
                 </div>
@@ -23,7 +25,7 @@ function Task({ task, onChange, del }) {
                 </div>
             </div>
             <div className={styles._pannel}>
-                <button className={styles._btn} onClick={del} >Delete</button>
+                <button className={styles._btn} onClick={onDel}>{btnText}</button>
             </div>
             
         </div>

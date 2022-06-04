@@ -4,16 +4,15 @@ import { activeTasksListSelector } from '../../../redux/selectors';
 
 import Task from '../../task'
 
-function ActiveTasks({ tasks, onChange, del }) {
-
+function ActiveTasks({ tasks, onCheckbox, onDel }) {
     return (
         <div>
             {tasks.map(task => (
                 <Task 
                     key={task.id} 
                     task={task} 
-                    onChange={() => onChange(task)}
-                    del={() => del(task)}
+                    onCheckbox={() => onCheckbox(task)}
+                    onDel={() => onDel(task)}
                 /> 
             ))}
         </div>
@@ -25,8 +24,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    onChange: (task) => dispatch(doneTask(task)),
-    del: (task) => dispatch(delTask(task)),
+    onCheckbox: (task) => dispatch(doneTask(task)),
+    onDel: (task) => dispatch(delTask(task)),
 })
 
 
