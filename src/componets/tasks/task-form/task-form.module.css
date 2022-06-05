@@ -1,13 +1,14 @@
 ._wrapper{
-    background-color: rgba(252, 204, 186, 0.183);
+    background-color: #fef6f2;
     padding: 16px;
+    position: relative;
 }
 
 ._form{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 ._input{
@@ -36,6 +37,18 @@
 }
 ._input:focus::placeholder{
     color: rgb(0, 0, 0);
+}
+
+._calendarWrapper{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fef6f2;
+}
+
+._calendarIcon{
+    height: 32px;
+    width: 32px;
 }
 
 ._btn{
