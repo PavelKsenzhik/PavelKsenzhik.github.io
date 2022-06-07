@@ -6,7 +6,6 @@ import styles from './task.module.css';
 
 function Task({ task, onCheckbox, onDel, bin }) {
     const { text, checked, date } = task;
-    console.log(date);
     const btnText = bin ? 'Restore' : 'Delete';
     return (
         <div className={styles._wrapper}>

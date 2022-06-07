@@ -26,7 +26,6 @@ const TaskForm = ({ onSubmit }) => {
         // DEV ONLY
         values.id = Math.random();
         values.date = Date.parse(selectedDay);
-        console.log(values);
         onSubmit(values);
         setVisCal(false);
         reset();
@@ -40,11 +39,11 @@ const TaskForm = ({ onSubmit }) => {
         <div className={styles._wrapper}>
             <form className={styles._form} onSubmit={handleSubmit}>
                 <input 
-                className={styles._input}
-                type='text'
-                placeholder='Write your task here'
-                onClick={() => setVisCal(false)}
-                {...handlers.text}>
+                    className={styles._input}
+                    type='text'
+                    placeholder='Write your task here'
+                    onClick={() => setVisCal(false)}
+                    {...handlers.text}>
                 </input>
                 <div className={styles._dateWrapper}>
                     <CalIcon className={styles._calendarIcon} onClick={handleCalendar}/>
