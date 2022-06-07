@@ -7,26 +7,34 @@ import { ReactComponent as CalIcon } from '../../../icons/calendar.svg';
 import useForm from '../../../hooks/use-form';
 
 import Calendar from '../../calendar';
+import Moment from 'react-moment';
 
 import styles from './task-form.module.css'
 
 const INITIAL_STATE = { text: '', }
 
 const TaskForm = ({ onSubmit }) => {
-    const [visCal, setVisCal] = useState(false);
-    const { values, handlers, reset } = useForm(INITIAL_STATE);
 
-    const handleCalendar = () => setVisCal(!visCal);
-    console.log(visCal);    
+    const { values, handlers, reset } = useForm(INITIAL_STATE);
     const handleSubmit = (event) => {
         event.preventDefault();
         if(values.text === '') {
             alert('Write something')
             return
         }
-        onSubmit(values, Math.random(), Date.parse(new Date()));
+
+        // DEV ONLY
+        values.id = Math.random();
+        values.date = Date.parse(selectedDay);
+        console.log(values);
+        onSubmit(values);
+        setVisCal(false);
         reset();
     }
+
+    const [visCal, setVisCal] = useState(false);
+    const [selectedDay, setSelectedDay] = useState(new Date());
+    const handleCalendar = () => setVisCal(!visCal);
 
     return (
         <div className={styles._wrapper}>
@@ -35,9 +43,22 @@ const TaskForm = ({ onSubmit }) => {
                 className={styles._input}
                 type='text'
                 placeholder='Write your task here'
-                {...handlers.text}></input>
-                <CalIcon className={styles._calendarIcon} onClick={handleCalendar}/>
-                {visCal ? <div className={styles._calendarWrapper}><Calendar /></div> : <div></div>}
+                onClick={() => setVisCal(false)}
+                {...handlers.text}>
+                </input>
+                <div className={styles._dateWrapper}>
+                    <CalIcon className={styles._calendarIcon} onClick={handleCalendar}/>
+                    {visCal ? 
+                        <div className={styles._calendarWrapper}>
+                            <Calendar
+                                selectedDay={selectedDay}
+                                onSelect={setSelectedDay}
+                            />
+                        </div> 
+                    : null}
+                    <p className={styles._dateText}>Task for <Moment date={selectedDay} format='ddd, D MMM'/></p>
+                </div>
+
                 <button className={styles._btn} type='submit'>Add task</button>
             </form>
         </div>
@@ -45,8 +66,8 @@ const TaskForm = ({ onSubmit }) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    onSubmit: (values, taskId, date) => {
-        dispatch(addTask(values, taskId, date))
+    onSubmit: (values) => {
+        dispatch(addTask(values))
     },
 });
 
