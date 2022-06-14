@@ -6,7 +6,7 @@ import Task from '../../task'
 
 import styles from './doneTasks.module.css'
 
-function DoneTasks({ filterCondition, tasks, onCheckbox, onDel }) {
+function DoneTasks({ tasks, onCheckbox, onDel }) {
 
     if(tasks.length === 0) return (
         <div></div>
