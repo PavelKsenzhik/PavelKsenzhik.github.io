@@ -10,10 +10,10 @@ import Header from '../header';
 import Sidebar from '../sidebar';
 import Tasks from '../tasks';
 import Bin from '../bin';
+import NotFoundPage from '../notFoundPage';
 
 import './min.css'
 import './app.css';
-
 
 
 function App() {
@@ -27,10 +27,10 @@ function App() {
         <div className='content'>
           <Header />
           <Routes>
-            <Route path="/" element={<Navigate to="/tasks"/>} />
-            <Route path="/tasks" element={<Tasks />}/>
+            <Route exact path="/" element={<Navigate to="/main"/>} />
+            <Route path="/main" element={<Tasks />} />
             <Route path="/bin" element={<Bin />}/>
-            
+            <Route path="*" element={<NotFoundPage />}/>
           </Routes>
         </div>
 

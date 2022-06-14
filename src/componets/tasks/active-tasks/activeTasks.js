@@ -4,10 +4,17 @@ import { activeTasksListSelector } from '../../../redux/selectors';
 
 import Task from '../../task'
 
-function ActiveTasks({ tasks, onCheckbox, onDel }) {
+function ActiveTasks({ filterCondition ,tasks, onCheckbox, onDel }) {
+    console.log(filterCondition);
+    
     return (
         <div>
-            {tasks.map(task => (
+            {tasks
+            .filter((task) => {
+                console.log(task.date);
+                return task.date >= filterCondition.startDate && task.date <= filterCondition.endDate
+            })
+            .map(task => (
                 <Task 
                     key={task.id} 
                     task={task} 
