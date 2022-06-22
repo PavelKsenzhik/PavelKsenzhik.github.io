@@ -6,7 +6,7 @@ import './tasks.css'
 
 
 function Tasks() {
-
+    console.log(typeof(42.1))
     return (
         <div className='tasks'>
             <TaskForm />
