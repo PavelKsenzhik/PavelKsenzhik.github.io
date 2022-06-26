@@ -49,6 +49,9 @@
     top: 100%;
     left: 0;
     background-color: #fef6f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 ._calendarIcon{
@@ -76,4 +79,17 @@
 ._btn:hover{
     background-color: coral;
     color: #fff;
+}
+
+._closeBtn{
+    display: block;
+    color: coral;
+    padding: 8px 16px;
+}
+
+._closeBtn:hover{
+    display: block;
+    border-radius: 8px;
+    color: #fff;
+    background-color: coral;
 }

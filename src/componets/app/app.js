@@ -2,9 +2,9 @@ import {
   Routes,
   Route,
   Navigate,
-} from 'react-router-dom'
-import useAnim from '../../hooks/use-anim';
+} from 'react-router-dom';
 
+import useAnim from '../../hooks/use-anim';
 
 import Header from '../header';
 import Sidebar from '../sidebar';
@@ -35,9 +35,6 @@ function App() {
         </div>
 
       </div>
-
-
-
   );
 }
 

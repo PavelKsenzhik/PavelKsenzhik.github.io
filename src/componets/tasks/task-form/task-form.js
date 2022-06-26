@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTask } from '../../../redux/actions';
-
-import { ReactComponent as CalIcon } from '../../../icons/calendar.svg';
+import Moment from 'react-moment';
 
 import useForm from '../../../hooks/use-form';
 
 import Calendar from '../../calendar';
-import Moment from 'react-moment';
+
+import { ReactComponent as CalIcon } from '../../../icons/calendar.svg';
 
 import styles from './task-form.module.css'
 
@@ -33,7 +33,6 @@ const TaskForm = ({ onSubmit }) => {
 
     const [visCal, setVisCal] = useState(false);
     const [selectedDay, setSelectedDay] = useState(new Date());
-    const handleCalendar = () => setVisCal(!visCal);
 
     return (
         <div className={styles._wrapper}>
@@ -46,13 +45,18 @@ const TaskForm = ({ onSubmit }) => {
                     {...handlers.text}>
                 </input>
                 <div className={styles._dateWrapper}>
-                    <CalIcon className={styles._calendarIcon} onClick={handleCalendar}/>
+                    <CalIcon 
+                    className={styles._calendarIcon} 
+                    onClick={() => setVisCal(!visCal)}
+                    />
                     {visCal ? 
                         <div className={styles._calendarWrapper}>
+                            <p className={styles._closeBtn} onClick={() => setVisCal(!visCal)}>Close Daypicker</p>
                             <Calendar
                                 selectedDay={selectedDay}
                                 onSelect={setSelectedDay}
                             />
+                            
                         </div> 
                     : null}
                     <p className={styles._dateText}>Task for <Moment date={selectedDay} format='ddd, D MMM'/></p>
