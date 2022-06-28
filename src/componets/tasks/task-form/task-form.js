@@ -28,6 +28,7 @@ const TaskForm = ({ onSubmit }) => {
         values.date = Date.parse(selectedDay);
         onSubmit(values);
         setVisCal(false);
+        setSelectedDay(new Date())
         reset();
     }
 
