@@ -58,7 +58,8 @@ const TaskForm = ({ onSubmit }) => {
                             />
                             
                         </div> 
-                    : null}
+                        : null
+                    }
                     <p className={styles._dateText}>Task for <Moment date={selectedDay} format='ddd, D MMM'/></p>
                 </div>
 
