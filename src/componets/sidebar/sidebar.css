@@ -67,6 +67,12 @@
     margin-right: 8px;
 }
 
+.sidebar__item-count{
+    margin-left: 4px;
+    font-size: 0.6em;
+    vertical-align: sub;        
+}
+
 .bin-pannel{
     color: #fff;
     position: relative;
@@ -106,6 +112,12 @@
     font-size: 24px;
 }
 
+.bin-pannel__count{
+    margin-top: -0.7em;
+    margin-left: 4px;
+    font-size: 1em;
+
+}
 
 @media (max-width: 1000px) {
     .sidebar__list{
